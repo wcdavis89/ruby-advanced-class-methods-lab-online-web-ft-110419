@@ -32,8 +32,7 @@ class Song
       end
   end
   def self.alphabetical
-    @@all_sorted = @@all.sort
-    @@all_sorted
+    @@all.sort!
   end
   
   def save
