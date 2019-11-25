@@ -26,10 +26,9 @@ class Song
     @@all.find{|song| song.name == name}
   end
   def self.find_or_create_by_name(name)
-      if @@all.find{|person| person.name == name}
-      else song = self.new
-    song.name = name
-    @@all << song
+      if @@all.find_by_name == true 
+        puts song
+      else self
   end
       
   end
