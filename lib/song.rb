@@ -29,10 +29,13 @@ class Song
       if @@all.find{|song| song.name == name}
         @@all.find{|song| song.name == name}
       else self.create_by_name(name)
+      end
   end
-      
+  def self.alphabetical
+    @@all_sorted = @@all.sort
+    @@all_sorted
   end
-
+  
   def save
     self.class.all << self
   end
