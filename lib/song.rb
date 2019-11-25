@@ -34,7 +34,7 @@ class Song
   def self.alphabetical
     self.all.sort_by! {|song| song.name}
   end
-  def self.new_from_filename(song_with_format)
+  def self.new_from_filename(song)
     row = song
     data = row.split(" - ")
     artist_name = data[0]
