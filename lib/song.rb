@@ -34,14 +34,14 @@ class Song
   def self.alphabetical
     self.all.sort_by! {|song| song.name}
   end
-  def self.new_from_filename(song)
+  def self.new_from_filename(song_with_format)
     row = song
     data = row.split(" - ")
-    artist = data[0]
+    artist_name = data[0]
     song_name = data[1].gsub(".mp3", "")
     song = self.new
     song.name = song_name
-    song.artist = artist
+    song.artist_name = artist_name
     song
   end 
   def save
