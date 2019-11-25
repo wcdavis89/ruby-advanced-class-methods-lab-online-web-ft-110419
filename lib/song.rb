@@ -44,6 +44,16 @@ class Song
     song.artist_name = artist_name
     song
   end 
+  def self.create_from_filename(song)
+    row = song
+    data = row.split(" - ")
+    artist_name = data[0]
+    song_name = data[1].gsub(".mp3", "")
+    song = self.new
+    song.name = song_name
+    song.artist_name = artist_name
+    song
+  end
   def save
     self.class.all << self
   end
